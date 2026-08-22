@@ -26,10 +26,12 @@
   body{
     font-family:'Montserrat',sans-serif;
     color:var(--navy);
-    background:
-      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.5), transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(255,255,255,0.35), transparent 45%),
-      linear-gradient(160deg, var(--bg-blue) 0%, var(--bg-blue-2) 50%, var(--bg-blue) 100%);
+    background-color: var(--bg-blue);
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     overflow-x:hidden;
   }
 
@@ -122,9 +124,7 @@
 
   /* ---------- SECTION 1 : HERO ---------- */
   #hero{
-    background:
-      radial-gradient(circle at 50% 20%, rgba(255,255,255,0.55), transparent 55%),
-      linear-gradient(180deg, var(--bg-blue) 0%, var(--bg-blue-2) 100%);
+    background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.25), transparent 60%);
   }
 
   .monogram{
@@ -241,7 +241,7 @@
 
   /* ---------- SECTION 2 : QURANIC QUOTE ---------- */
   #quote{
-    background:linear-gradient(180deg, var(--bg-blue-2) 0%, var(--bg-blue) 100%);
+    background: rgba(208,225,233,0.35);
   }
   .bismillah{
     font-family:'Amiri', serif;
@@ -277,7 +277,7 @@
 
   /* ---------- SECTION 3 : COUPLE / CARDS ---------- */
   #couple{
-    background:linear-gradient(180deg, var(--bg-blue) 0%, var(--bg-blue-2) 100%);
+    background: rgba(208,225,233,0.35);
   }
   .greeting-arabic{
     font-family:'Amiri', serif;
@@ -304,17 +304,9 @@
   }
 
   .playing-card{
-    width:220px;
-    height:330px;
-    background:linear-gradient(160deg, #faf6f0 0%, #f1e7da 100%);
-    border:1.5px solid var(--terracotta);
-    border-radius:16px;
-    box-shadow:0 25px 45px var(--shadow);
-    padding:18px;
     display:flex;
     flex-direction:column;
     align-items:center;
-    justify-content:space-between;
     position:relative;
     transform:rotateY(-40deg) rotateZ(-6deg) translateY(40px);
     opacity:0;
@@ -341,36 +333,25 @@
     50%{ transform:rotateZ(2deg) translateY(-12px); }
   }
 
-  .card-corner{
-    align-self:flex-start;
-    font-family:'Cinzel', serif;
-    font-size:0.95rem;
-    color:var(--terracotta);
-    font-weight:600;
-  }
-  .card-corner.bottom{
-    align-self:flex-end;
-    transform:rotate(180deg);
-  }
-
   .card-art{
-    width:120px;
-    height:150px;
+    width:100%;
     display:flex;
     align-items:center;
     justify-content:center;
   }
   .card-art img{
     width:100%;
-    height:100%;
-    object-fit:contain;
+    max-width:280px;
+    height:auto;
+    display:block;
+    filter:drop-shadow(0 25px 35px var(--shadow));
   }
 
   .couple-name{
     font-family:'Great Vibes', cursive;
     font-size:1.9rem;
     color:var(--terracotta);
-    margin-top:6px;
+    margin-top:18px;
   }
   .couple-parents{
     font-family:'Montserrat', sans-serif;
@@ -391,7 +372,7 @@
 
   /* ---------- SECTION 4 : EVENT DETAILS ---------- */
   #event{
-    background:linear-gradient(180deg, var(--bg-blue-2) 0%, var(--bg-blue) 100%);
+    background: rgba(195,217,228,0.35);
   }
   .event-card{
     background:rgba(255,255,255,0.35);
@@ -442,7 +423,7 @@
 
   /* ---------- SECTION 5 : RSVP + GIFT ---------- */
   #interact{
-    background:linear-gradient(180deg, var(--bg-blue) 0%, var(--bg-blue-2) 100%);
+    background: rgba(208,225,233,0.35);
     gap:50px;
   }
   .panels{
@@ -677,7 +658,7 @@
 
   @media (max-width: 640px){
     .cards-wrap{ gap:26px; }
-    .playing-card{ width:180px; height:270px; }
+    .card-art img{ max-width:220px; }
     .panels{ gap:22px; }
     .event-card{ padding:40px 26px; }
     section{ padding:8vh 6vw; }
@@ -735,7 +716,6 @@
 
     <div class="cards-wrap" id="cards-wrap">
       <div class="playing-card king">
-        <div class="card-corner top">K</div>
         <div class="card-art">
           <img src="king-card.png" alt="King Raheel" onerror="this.onerror=null;this.src=window.__kingSVG;">
         </div>
@@ -743,13 +723,11 @@
           <div class="couple-name">Raheel Jan</div>
           <div class="couple-parents">Son of Mr. Tariq Jan<br>&amp; Mrs. Suriya Bibi</div>
         </div>
-        <div class="card-corner bottom">K</div>
       </div>
 
       <div class="heart-divider">&amp;</div>
 
       <div class="playing-card queen">
-        <div class="card-corner top">Q</div>
         <div class="card-art">
           <img src="queen-card.png" alt="Queen Shofiyya" onerror="this.onerror=null;this.src=window.__queenSVG;">
         </div>
@@ -757,7 +735,6 @@
           <div class="couple-name">Shofiyya Honey Falah</div>
           <div class="couple-parents">Daughter of Mr. Sugiri Pujo Sumadyo<br>&amp; Mrs. Widayati</div>
         </div>
-        <div class="card-corner bottom">Q</div>
       </div>
     </div>
   </section>
