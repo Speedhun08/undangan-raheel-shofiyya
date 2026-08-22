@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Raheel & Shofiyya | Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Amiri&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-blue: #D0E1E9;
+    --bg-blue-2: #c3d9e4;
+    --terracotta: #8B3A3A;
+    --terracotta-light: #a85252;
+    --navy: #2c3e4a;
+    --gold: #b98b52;
+    --cream: #faf6f0;
+    --shadow: rgba(44,62,74,0.18);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Montserrat',sans-serif;
+    color:var(--navy);
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.5), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(255,255,255,0.35), transparent 45%),
+      linear-gradient(160deg, var(--bg-blue) 0%, var(--bg-blue-2) 50%, var(--bg-blue) 100%);
+    overflow-x:hidden;
+  }
+
+  /* satin texture overlay */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background-image: repeating-linear-gradient(120deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 2px, transparent 2px, transparent 6px);
+    mix-blend-mode:overlay;
+    z-index:0;
+  }
+
+  #scroll-container{
+    height:100vh;
+    overflow-y:scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  section{
+    min-height:100vh;
+    width:100%;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    padding:6vh 6vw;
+    text-align:center;
+  }
+
+  .eyebrow{
+    font-family:'Cinzel',serif;
+    letter-spacing:0.35em;
+    font-size:0.7rem;
+    text-transform:uppercase;
+    color:var(--terracotta);
+    margin-bottom:18px;
+  }
+
+  h1,h2,h3{ font-weight:400; }
+
+  .script{
+    font-family:'Great Vibes', cursive;
+    color:var(--terracotta);
+  }
+
+  .serif-title{
+    font-family:'Cinzel', serif;
+    letter-spacing:0.08em;
+  }
+
+  /* decorative frame */
+  .frame-line{
+    position:absolute;
+    inset:18px;
+    border:1px solid rgba(139,58,58,0.35);
+    pointer-events:none;
+  }
+  .frame-corner{
+    position:absolute;
+    width:34px;
+    height:34px;
+    border:1.5px solid var(--terracotta);
+  }
+  .frame-corner.tl{top:24px;left:24px;border-right:none;border-bottom:none;}
+  .frame-corner.tr{top:24px;right:24px;border-left:none;border-bottom:none;}
+  .frame-corner.bl{bottom:24px;left:24px;border-right:none;border-top:none;}
+  .frame-corner.br{bottom:24px;right:24px;border-left:none;border-top:none;}
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.in-view{
+    opacity:1;
+    transform:translateY(0);
+  }
+  .reveal.delay-1{transition-delay:0.12s;}
+  .reveal.delay-2{transition-delay:0.24s;}
+  .reveal.delay-3{transition-delay:0.36s;}
+  .reveal.delay-4{transition-delay:0.48s;}
+
+  /* ---------- SECTION 1 : HERO ---------- */
+  #hero{
+    background:
+      radial-gradient(circle at 50% 20%, rgba(255,255,255,0.55), transparent 55%),
+      linear-gradient(180deg, var(--bg-blue) 0%, var(--bg-blue-2) 100%);
+  }
+
+  .monogram{
+    width:120px;
+    height:120px;
+    border:1.5px solid var(--terracotta);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 28px;
+    position:relative;
+    background: rgba(255,255,255,0.25);
+  }
+  .monogram::before{
+    content:"";
+    position:absolute;
+    inset:8px;
+    border:1px solid rgba(139,58,58,0.4);
+    border-radius:50%;
+  }
+  .monogram span{
+    font-family:'Great Vibes', cursive;
+    font-size:2.6rem;
+    color:var(--terracotta);
+  }
+
+  .hero-sub{
+    font-family:'Cinzel', serif;
+    font-size:0.78rem;
+    letter-spacing:0.2em;
+    color:var(--navy);
+    text-transform:uppercase;
+    margin-bottom:10px;
+    opacity:0.85;
+  }
+
+  .hero-names{
+    font-size:clamp(3rem, 10vw, 6rem);
+    line-height:1.05;
+    margin:6px 0 22px;
+  }
+  .hero-names .amp{
+    font-size:0.6em;
+    color:var(--navy);
+    margin:0 10px;
+    display:inline-block;
+  }
+
+  .hero-meta{
+    font-family:'Cinzel', serif;
+    font-size:0.85rem;
+    letter-spacing:0.12em;
+    color:var(--terracotta);
+    margin-bottom:40px;
+  }
+  .hero-meta .dot{ margin:0 12px; opacity:0.5; color:var(--navy); }
+
+  .btn{
+    font-family:'Cinzel', serif;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    font-size:0.75rem;
+    background:transparent;
+    border:1.4px solid var(--terracotta);
+    color:var(--terracotta);
+    padding:16px 38px;
+    border-radius:50px;
+    cursor:pointer;
+    transition:all 0.4s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .btn::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:var(--terracotta);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform 0.4s ease;
+    z-index:-1;
+  }
+  .btn:hover::before{ transform:scaleX(1); }
+  .btn:hover{ color:var(--cream); }
+
+  .scroll-hint{
+    position:absolute;
+    bottom:34px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:0.65rem;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    color:var(--navy);
+    opacity:0.55;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+  }
+  .scroll-hint .line{
+    width:1px;
+    height:26px;
+    background:var(--navy);
+    animation:scrolldown 1.8s infinite;
+  }
+  @keyframes scrolldown{
+    0%{ transform:scaleY(0); transform-origin:top; opacity:0;}
+    40%{ transform:scaleY(1); transform-origin:top; opacity:1;}
+    60%{ transform:scaleY(1); transform-origin:bottom; opacity:1;}
+    100%{ transform:scaleY(0); transform-origin:bottom; opacity:0;}
+  }
+
+  /* ---------- SECTION 2 : QURANIC QUOTE ---------- */
+  #quote{
+    background:linear-gradient(180deg, var(--bg-blue-2) 0%, var(--bg-blue) 100%);
+  }
+  .bismillah{
+    font-family:'Amiri', serif;
+    font-size:clamp(1.8rem, 5vw, 2.6rem);
+    color:var(--terracotta);
+    margin-bottom:30px;
+  }
+  .arabic-verse{
+    font-family:'Amiri', serif;
+    font-size:clamp(1.4rem, 4vw, 2rem);
+    line-height:2.2;
+    color:var(--navy);
+    max-width:820px;
+    margin-bottom:34px;
+    direction:rtl;
+  }
+  .verse-text{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:clamp(1.05rem, 2.4vw, 1.35rem);
+    max-width:640px;
+    line-height:1.9;
+    color:var(--navy);
+    margin-bottom:16px;
+  }
+  .verse-ref{
+    font-family:'Cinzel', serif;
+    letter-spacing:0.15em;
+    font-size:0.75rem;
+    color:var(--terracotta);
+    text-transform:uppercase;
+  }
+
+  /* ---------- SECTION 3 : COUPLE / CARDS ---------- */
+  #couple{
+    background:linear-gradient(180deg, var(--bg-blue) 0%, var(--bg-blue-2) 100%);
+  }
+  .greeting-arabic{
+    font-family:'Amiri', serif;
+    font-size:clamp(1.2rem,3.4vw,1.6rem);
+    color:var(--terracotta);
+    margin-bottom:14px;
+  }
+  .greeting-text{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.05rem;
+    max-width:560px;
+    line-height:1.8;
+    color:var(--navy);
+    margin-bottom:48px;
+  }
+
+  .cards-wrap{
+    display:flex;
+    gap:60px;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    perspective:1600px;
+  }
+
+  .playing-card{
+    width:220px;
+    height:330px;
+    background:linear-gradient(160deg, #faf6f0 0%, #f1e7da 100%);
+    border:1.5px solid var(--terracotta);
+    border-radius:16px;
+    box-shadow:0 25px 45px var(--shadow);
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    transform:rotateY(-40deg) rotateZ(-6deg) translateY(40px);
+    opacity:0;
+    transition:transform 1.3s cubic-bezier(.22,1,.36,1), opacity 1s ease;
+  }
+  .playing-card.queen{
+    transform:rotateY(40deg) rotateZ(6deg) translateY(40px);
+  }
+  .cards-wrap.in-view .playing-card{
+    opacity:1;
+    transform:rotateY(0) rotateZ(-3deg) translateY(0);
+    animation:float-king 4.5s ease-in-out 1.3s infinite;
+  }
+  .cards-wrap.in-view .playing-card.queen{
+    transform:rotateY(0) rotateZ(3deg) translateY(0);
+    animation:float-queen 4.5s ease-in-out 1.3s infinite;
+  }
+  @keyframes float-king{
+    0%,100%{ transform:rotateZ(-3deg) translateY(0); }
+    50%{ transform:rotateZ(-2deg) translateY(-12px); }
+  }
+  @keyframes float-queen{
+    0%,100%{ transform:rotateZ(3deg) translateY(0); }
+    50%{ transform:rotateZ(2deg) translateY(-12px); }
+  }
+
+  .card-corner{
+    align-self:flex-start;
+    font-family:'Cinzel', serif;
+    font-size:0.95rem;
+    color:var(--terracotta);
+    font-weight:600;
+  }
+  .card-corner.bottom{
+    align-self:flex-end;
+    transform:rotate(180deg);
+  }
+
+  .card-art{
+    width:120px;
+    height:150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .card-art img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+  }
+
+  .couple-name{
+    font-family:'Great Vibes', cursive;
+    font-size:1.9rem;
+    color:var(--terracotta);
+    margin-top:6px;
+  }
+  .couple-parents{
+    font-family:'Montserrat', sans-serif;
+    font-size:0.68rem;
+    color:var(--navy);
+    letter-spacing:0.02em;
+    line-height:1.5;
+    margin-top:6px;
+    opacity:0.85;
+  }
+
+  .heart-divider{
+    font-family:'Great Vibes', cursive;
+    font-size:2.2rem;
+    color:var(--navy);
+    opacity:0.5;
+  }
+
+  /* ---------- SECTION 4 : EVENT DETAILS ---------- */
+  #event{
+    background:linear-gradient(180deg, var(--bg-blue-2) 0%, var(--bg-blue) 100%);
+  }
+  .event-card{
+    background:rgba(255,255,255,0.35);
+    border:1px solid rgba(139,58,58,0.3);
+    border-radius:18px;
+    padding:52px 42px;
+    max-width:520px;
+    width:100%;
+    backdrop-filter:blur(6px);
+  }
+  .event-title{
+    font-family:'Great Vibes', cursive;
+    font-size:2.6rem;
+    color:var(--terracotta);
+    margin-bottom:22px;
+  }
+  .event-row{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    margin-bottom:22px;
+  }
+  .event-label{
+    font-family:'Cinzel', serif;
+    font-size:0.65rem;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--navy);
+    opacity:0.6;
+  }
+  .event-value{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.25rem;
+    color:var(--navy);
+  }
+  .divider-orn{
+    width:60px;
+    height:1px;
+    background:var(--terracotta);
+    margin:20px auto;
+    opacity:0.6;
+  }
+  .maps-btn{
+    margin-top:14px;
+    display:inline-block;
+    text-decoration:none;
+  }
+
+  /* ---------- SECTION 5 : RSVP + GIFT ---------- */
+  #interact{
+    background:linear-gradient(180deg, var(--bg-blue) 0%, var(--bg-blue-2) 100%);
+    gap:50px;
+  }
+  .panels{
+    display:flex;
+    gap:36px;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:flex-start;
+    width:100%;
+    max-width:960px;
+  }
+  .panel{
+    background:rgba(255,255,255,0.4);
+    border:1px solid rgba(139,58,58,0.28);
+    border-radius:18px;
+    padding:36px 30px;
+    flex:1 1 380px;
+    min-width:280px;
+    text-align:left;
+    backdrop-filter:blur(6px);
+  }
+  .panel h3{
+    font-family:'Cinzel', serif;
+    font-size:1rem;
+    letter-spacing:0.12em;
+    color:var(--terracotta);
+    text-transform:uppercase;
+    margin-bottom:22px;
+    text-align:center;
+  }
+
+  .form-group{ margin-bottom:18px; }
+  .form-group label{
+    display:block;
+    font-family:'Montserrat',sans-serif;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    color:var(--navy);
+    margin-bottom:7px;
+    text-transform:uppercase;
+    opacity:0.75;
+  }
+  .form-group input,
+  .form-group select{
+    width:100%;
+    padding:12px 14px;
+    border-radius:8px;
+    border:1px solid rgba(44,62,74,0.25);
+    background:rgba(255,255,255,0.6);
+    font-family:'Montserrat', sans-serif;
+    font-size:0.9rem;
+    color:var(--navy);
+    outline:none;
+    transition:border-color 0.3s ease;
+  }
+  .form-group input:focus,
+  .form-group select:focus{
+    border-color:var(--terracotta);
+  }
+
+  .rsvp-submit{
+    width:100%;
+    margin-top:6px;
+  }
+
+  .gift-info{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1rem;
+    color:var(--navy);
+    text-align:center;
+    margin-bottom:22px;
+    line-height:1.7;
+  }
+  .bank-box{
+    background:rgba(255,255,255,0.55);
+    border:1px dashed var(--terracotta);
+    border-radius:12px;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:16px;
+    gap:12px;
+  }
+  .bank-details{ text-align:left; }
+  .bank-name{
+    font-family:'Cinzel', serif;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    color:var(--navy);
+    opacity:0.7;
+    margin-bottom:4px;
+  }
+  .bank-number{
+    font-family:'Montserrat', sans-serif;
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--terracotta);
+    letter-spacing:0.05em;
+  }
+  .bank-holder{
+    font-family:'Montserrat', sans-serif;
+    font-size:0.75rem;
+    color:var(--navy);
+    opacity:0.7;
+    margin-top:3px;
+  }
+  .copy-btn{
+    font-family:'Cinzel', serif;
+    font-size:0.65rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    background:var(--terracotta);
+    color:var(--cream);
+    border:none;
+    padding:10px 16px;
+    border-radius:30px;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:background 0.3s ease;
+  }
+  .copy-btn:hover{ background:var(--terracotta-light); }
+  .copy-btn.copied{ background:var(--navy); }
+
+  .qris-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    margin-top:6px;
+  }
+  .qris-placeholder{
+    width:150px;
+    height:150px;
+    background:repeating-conic-gradient(rgba(44,62,74,0.15) 0% 25%, transparent 0% 50%) 50% / 20px 20px;
+    border:1px solid rgba(139,58,58,0.4);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Cinzel', serif;
+    font-size:0.7rem;
+    color:var(--navy);
+    text-align:center;
+    padding:10px;
+  }
+
+  footer{
+    padding:40px 6vw 60px;
+    text-align:center;
+  }
+  .footer-names{
+    font-family:'Great Vibes', cursive;
+    font-size:2.4rem;
+    color:var(--terracotta);
+    margin-bottom:8px;
+  }
+  .footer-sub{
+    font-family:'Cinzel', serif;
+    font-size:0.65rem;
+    letter-spacing:0.2em;
+    color:var(--navy);
+    opacity:0.6;
+    text-transform:uppercase;
+  }
+
+  /* ---------- Toast ---------- */
+  #toast{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    background:var(--navy);
+    color:var(--cream);
+    font-family:'Montserrat', sans-serif;
+    font-size:0.85rem;
+    padding:16px 26px;
+    border-radius:10px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.25);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.4s ease, transform 0.4s ease;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  #toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+
+  /* ---------- music toggle ---------- */
+  #music-toggle{
+    position:fixed;
+    top:22px;
+    right:22px;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid var(--terracotta);
+    background:rgba(255,255,255,0.5);
+    color:var(--terracotta);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    z-index:998;
+    font-size:1.1rem;
+    opacity:0;
+    transition:opacity 0.5s ease;
+  }
+  #music-toggle.visible{ opacity:1; }
+  #music-toggle.spinning{ animation:spin 3.5s linear infinite; }
+  @keyframes spin{ from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+
+  /* ---------- Cover overlay (pre-open state) ---------- */
+  #cover-lock{
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(160deg, var(--bg-blue) 0%, var(--bg-blue-2) 100%);
+    transition:opacity 0.9s ease, visibility 0.9s ease;
+  }
+  #cover-lock.hidden{
+    opacity:0;
+    visibility:hidden;
+  }
+
+  @media (max-width: 640px){
+    .cards-wrap{ gap:26px; }
+    .playing-card{ width:180px; height:270px; }
+    .panels{ gap:22px; }
+    .event-card{ padding:40px 26px; }
+    section{ padding:8vh 6vw; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ MUSIC TOGGLE ============ -->
+<button id="music-toggle" aria-label="Toggle music">&#9835;</button>
+
+<!-- ============ TOAST ============ -->
+<div id="toast"></div>
+
+<!-- ============ COVER LOCK (Section 1 acts as gate) ============ -->
+<div id="scroll-container">
+
+  <!-- SECTION 1: HERO -->
+  <section id="hero">
+    <div class="frame-line"></div>
+    <div class="frame-corner tl"></div>
+    <div class="frame-corner tr"></div>
+    <div class="frame-corner bl"></div>
+    <div class="frame-corner br"></div>
+
+    <div class="monogram reveal"><span>R&amp;S</span></div>
+    <div class="hero-sub reveal delay-1">We invite you to our nikah</div>
+    <h1 class="hero-names reveal delay-2">Raheel <span class="amp">&amp;</span> Shofiyya</h1>
+    <div class="hero-meta reveal delay-3">
+      25.08.2026 <span class="dot">•</span> Al-Muhajirin Mosque, Transad <span class="dot">•</span> 09.00 AM
+    </div>
+    <button class="btn reveal delay-4" id="open-invitation">Open Invitation</button>
+
+    <div class="scroll-hint"><span class="line"></span>Scroll</div>
+  </section>
+
+  <!-- SECTION 2: QURANIC QUOTE -->
+  <section id="quote">
+    <div class="bismillah reveal">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <p class="arabic-verse reveal delay-1">
+      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+    </p>
+    <p class="verse-text reveal delay-2">
+      "And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts."
+    </p>
+    <div class="verse-ref reveal delay-3">— Ar-Rum : 21</div>
+  </section>
+
+  <!-- SECTION 3: THE COUPLE -->
+  <section id="couple">
+    <div class="greeting-arabic reveal">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</div>
+    <p class="greeting-text reveal delay-1">
+      Without reducing respect, we would like to inform you that we are holding a wedding celebration for our sons and daughters. We would be deeply honored by your presence to give your blessing and prayers.
+    </p>
+
+    <div class="cards-wrap" id="cards-wrap">
+      <div class="playing-card king">
+        <div class="card-corner top">K</div>
+        <div class="card-art">
+          <img src="king-card.png" alt="King Raheel" onerror="this.onerror=null;this.src=window.__kingSVG;">
+        </div>
+        <div>
+          <div class="couple-name">Raheel Jan</div>
+          <div class="couple-parents">Son of Mr. Tariq Jan<br>&amp; Mrs. Suriya Bibi</div>
+        </div>
+        <div class="card-corner bottom">K</div>
+      </div>
+
+      <div class="heart-divider">&amp;</div>
+
+      <div class="playing-card queen">
+        <div class="card-corner top">Q</div>
+        <div class="card-art">
+          <img src="queen-card.png" alt="Queen Shofiyya" onerror="this.onerror=null;this.src=window.__queenSVG;">
+        </div>
+        <div>
+          <div class="couple-name">Shofiyya Honey Falah</div>
+          <div class="couple-parents">Daughter of Mr. Sugiri Pujo Sumadyo<br>&amp; Mrs. Widayati</div>
+        </div>
+        <div class="card-corner bottom">Q</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: EVENT DETAILS -->
+  <section id="event">
+    <div class="event-card reveal">
+      <div class="event-title">Akad Nikah</div>
+
+      <div class="event-row">
+        <span class="event-label">Date &amp; Time</span>
+        <span class="event-value">Tuesday, 25 August 2026 — 09:00 AM</span>
+      </div>
+
+      <div class="divider-orn"></div>
+
+      <div class="event-row">
+        <span class="event-label">Venue</span>
+        <span class="event-value">Al-Muhajirin Mosque, Transad</span>
+      </div>
+
+      <a class="maps-btn" href="https://www.google.com/maps/search/?api=1&query=Al-Muhajirin+Mosque+Transad" target="_blank" rel="noopener">
+        <button class="btn">View Location on Google Maps</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 5: RSVP + GIFT -->
+  <section id="interact">
+    <h2 class="serif-title script reveal" style="font-size:2.4rem;">RSVP &amp; Wishes</h2>
+
+    <div class="panels">
+      <div class="panel reveal delay-1">
+        <h3>Confirm Your Attendance</h3>
+        <form id="rsvp-form">
+          <div class="form-group">
+            <label for="guest-name">Guest Name</label>
+            <input type="text" id="guest-name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="guest-count">Number of Guests</label>
+            <input type="number" id="guest-count" min="1" max="10" value="1" required>
+          </div>
+          <div class="form-group">
+            <label for="attendance">Attendance Status</label>
+            <select id="attendance" required>
+              <option value="attending">Attending</option>
+              <option value="not-attending">Unable to Attend</option>
+            </select>
+          </div>
+          <button type="submit" class="btn rsvp-submit">Send RSVP</button>
+        </form>
+      </div>
+
+      <div class="panel reveal delay-2">
+        <h3>Wedding Gift</h3>
+        <p class="gift-info">With love and without reducing respect, your presence and prayers are the greatest gift. For those wishing to send a token of love, please find our details below.</p>
+
+        <div class="bank-box">
+          <div class="bank-details">
+            <div class="bank-name">BRI — a/n Shofiyya H.F.</div>
+            <div class="bank-number" id="bank-number">0353 0110 4433 500</div>
+            <div class="bank-holder">Shofiyya Honey Falah</div>
+          </div>
+          <button class="copy-btn" id="copy-btn">Copy</button>
+        </div>
+
+        <div class="qris-box">
+          <div class="qris-placeholder">QRIS Placeholder<br>(replace with qris.png)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-names script">Raheel &amp; Shofiyya</div>
+    <div class="footer-sub">25 . 08 . 2026</div>
+  </footer>
+
+</div>
+
+<!-- inline background music (silent placeholder, replace src to enable) -->
+<audio id="bg-audio" loop preload="none">
+  <source src="wedding-music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------------- Fallback inline SVG art (used only if king-card.png / queen-card.png are missing) ---------------- */
+  window.__kingSVG = "data:image/svg+xml;utf8," + encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150">
+      <defs>
+        <linearGradient id="gK" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#8B3A3A"/>
+          <stop offset="100%" stop-color="#b98b52"/>
+        </linearGradient>
+      </defs>
+      <circle cx="60" cy="42" r="26" fill="none" stroke="url(#gK)" stroke-width="1.4"/>
+      <path d="M40 42 Q60 10 80 42" fill="none" stroke="url(#gK)" stroke-width="1.4"/>
+      <path d="M60 16 L64 26 L74 26 L66 32 L69 42 L60 36 L51 42 L54 32 L46 26 L56 26 Z" fill="url(#gK)"/>
+      <path d="M30 70 C 30 60, 90 60, 90 70 L 90 130 C 90 140, 30 140, 30 130 Z" fill="none" stroke="url(#gK)" stroke-width="1.2"/>
+      <path d="M45 78 Q60 68 75 78 M45 95 Q60 85 75 95 M45 112 Q60 102 75 112" fill="none" stroke="url(#gK)" stroke-width="0.8" opacity="0.7"/>
+      <ellipse cx="60" cy="128" rx="14" ry="6" fill="none" stroke="url(#gK)" stroke-width="1.2"/>
+    </svg>
+  `);
+
+  window.__queenSVG = "data:image/svg+xml;utf8," + encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150">
+      <defs>
+        <linearGradient id="gQ" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#8B3A3A"/>
+          <stop offset="100%" stop-color="#b98b52"/>
+        </linearGradient>
+      </defs>
+      <circle cx="60" cy="42" r="26" fill="none" stroke="url(#gQ)" stroke-width="1.4"/>
+      <path d="M38 40 Q60 60 82 40" fill="none" stroke="url(#gQ)" stroke-width="1.4"/>
+      <circle cx="60" cy="20" r="5" fill="url(#gQ)"/>
+      <circle cx="46" cy="26" r="3.4" fill="url(#gQ)"/>
+      <circle cx="74" cy="26" r="3.4" fill="url(#gQ)"/>
+      <path d="M32 72 C 32 60, 88 60, 88 72 L 88 128 C 88 140, 32 140, 32 128 Z" fill="none" stroke="url(#gQ)" stroke-width="1.2"/>
+      <path d="M46 80 Q60 72 74 80 M46 96 Q60 88 74 96 M46 112 Q60 104 74 112" fill="none" stroke="url(#gQ)" stroke-width="0.8" opacity="0.7"/>
+      <ellipse cx="60" cy="128" rx="16" ry="7" fill="none" stroke="url(#gQ)" stroke-width="1.2"/>
+    </svg>
+  `);
+
+  /* ---------------- Reveal on scroll (IntersectionObserver) ---------------- */
+  const revealEls = document.querySelectorAll('.reveal');
+  const cardsWrap = document.getElementById('cards-wrap');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.25 });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  const cardsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        cardsWrap.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  if (cardsWrap) cardsObserver.observe(cardsWrap);
+
+  /* ---------------- Open Invitation button ---------------- */
+  const openBtn = document.getElementById('open-invitation');
+  const musicToggle = document.getElementById('music-toggle');
+  const audio = document.getElementById('bg-audio');
+  const scrollContainer = document.getElementById('scroll-container');
+  let musicPlaying = false;
+
+  function tryPlayMusic(){
+    audio.volume = 0.55;
+    const p = audio.play();
+    if (p !== undefined) {
+      p.then(() => {
+        musicPlaying = true;
+        musicToggle.classList.add('spinning');
+      }).catch(() => {
+        musicPlaying = false;
+      });
+    }
+  }
+
+  openBtn.addEventListener('click', () => {
+    musicToggle.classList.add('visible');
+    tryPlayMusic();
+
+    const quoteSection = document.getElementById('quote');
+    quoteSection.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  musicToggle.addEventListener('click', () => {
+    if (musicPlaying) {
+      audio.pause();
+      musicPlaying = false;
+      musicToggle.classList.remove('spinning');
+    } else {
+      tryPlayMusic();
+    }
+  });
+
+  /* ---------------- Toast helper ---------------- */
+  const toast = document.getElementById('toast');
+  let toastTimer = null;
+  function showToast(message){
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3200);
+  }
+
+  /* ---------------- RSVP form ---------------- */
+  const rsvpForm = document.getElementById('rsvp-form');
+  rsvpForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('guest-name').value.trim();
+    const count = document.getElementById('guest-count').value;
+    const status = document.getElementById('attendance').value;
+
+    if (!name) {
+      showToast('Please enter your name.');
+      return;
+    }
+
+    const statusLabel = status === 'attending' ? 'Attending' : 'Unable to Attend';
+    showToast(`RSVP Successfully Sent! Thank you, ${name} (${count} guest${count > 1 ? 's' : ''}) — ${statusLabel}`);
+    rsvpForm.reset();
+  });
+
+  /* ---------------- Copy account number ---------------- */
+  const copyBtn = document.getElementById('copy-btn');
+  const bankNumberEl = document.getElementById('bank-number');
+
+  copyBtn.addEventListener('click', async () => {
+    const text = bankNumberEl.textContent.replace(/\s/g, '');
+    try {
+      await navigator.clipboard.writeText(text);
+      copyBtn.textContent = 'Copied!';
+      copyBtn.classList.add('copied');
+      showToast('Account number copied to clipboard.');
+    } catch (err) {
+      // Fallback for older browsers
+      const tmp = document.createElement('textarea');
+      tmp.value = text;
+      document.body.appendChild(tmp);
+      tmp.select();
+      document.execCommand('copy');
+      document.body.removeChild(tmp);
+      copyBtn.textContent = 'Copied!';
+      copyBtn.classList.add('copied');
+      showToast('Account number copied to clipboard.');
+    }
+    setTimeout(() => {
+      copyBtn.textContent = 'Copy';
+      copyBtn.classList.remove('copied');
+    }, 2000);
+  });
+
+})();
+</script>
+</body>
+</html>
